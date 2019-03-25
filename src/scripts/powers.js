@@ -24,13 +24,11 @@ function mindreadingFunction() {
 document.querySelector("#activate-mindreading").addEventListener("click", mindreadingFunction)
 
 function xrayFunction() {
-    const section = document.getElementById("activate-xray")
+    const section = document.getElementById("xray")
     section.classList.remove("disabled")
     section.classList.add("enabled")
 }
-
 document.querySelector("#activate-xray").addEventListener("click", xrayFunction)
-
 /*
 Write two more event handlers for activating and deactivating all powers when the corresponding buttons
  are clicked. You will need to use the document.querySelectorAll() method for these.
