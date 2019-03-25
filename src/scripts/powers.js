@@ -3,7 +3,7 @@ Add the correct string as the first argument to addEventListener()
 Write a function named flightHandlerFunction that will remove the disabled class on the corresponding <section id="flight"> (section, not button) and replace it with a class of enabled.
 Have your developer tools open. When you click the button, the following element...
 */
-function flightFunction () {
+function flightFunction() {
     const section = document.getElementById("flight")
     section.classList.remove("disabled")
     section.classList.add("enabled")
@@ -16,19 +16,19 @@ statements for handling the click event on the other two buttons. Those event ha
 removing disabled, and adding enabled on the corresponding <section> elements
 */
 
-function mindreadingFunction () {
+function mindreadingFunction() {
     const section = document.getElementById("mindreading")
     section.classList.remove("disabled")
     section.classList.add("enabled")
 }
-
-function xrayFunction () {
-    const section = document.getElementById("mindreading")
-    section.classList.remove("disabled")
-    section.classList.add("enabled")
-}
-
 document.querySelector("#activate-mindreading").addEventListener("click", mindreadingFunction)
+
+function xrayFunction() {
+    const section = document.getElementById("activate-xray")
+    section.classList.remove("disabled")
+    section.classList.add("enabled")
+}
+
 document.querySelector("#activate-xray").addEventListener("click", xrayFunction)
 
 /*
@@ -41,17 +41,16 @@ function activateHandler() {
     for (let i = 0; i < sections.length; i++) {
         sections[i].classList.remove("disabled")
         sections[i].classList.add("enabled")
-        
     }
+    document.getElementById("activate-all").addEventListener("click", activateHandler)
 }
+
 function deactivateHandler() {
     const sections = document.querySelectorAll(".power")
     for (let i = 0; i < sections.length; i++) {
         sections[i].classList.remove("enabled")
         sections[i].classList.add("disabled")
-        
     }
 }
 
-document.getElementById("activate-all").addEventListener("click", activateHandler)
 document.getElementById("deactivate-all").addEventListener("click", deactivateHandler)
